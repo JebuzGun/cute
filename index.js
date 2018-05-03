@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/sale')
     .then(()=>{
         app.listen(port, ()=>{
-           console.log('Servidor listo');
+           console.log('Servidor listo en ' +port);
         });
     }).catch((err)=>{
         console.log(err);
