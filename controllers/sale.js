@@ -19,7 +19,7 @@ function getSales(req,res) {
 function saveSale(req,res){
   let body = req.body;
   let sale;
-  if(!body.products && !body.total){
+  if(body.products && body.total){
     sale = new Sale({
       place: body.place,
       products: body.products,
