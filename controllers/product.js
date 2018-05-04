@@ -22,13 +22,13 @@ function getProduct(req, res) {
   Product.findById(id, (err, product) => {
     if (err) {
       return res.status(500).json({
-        mensaje: 'Error al eliminar el usuario',
+        mensaje: 'Error',
         ok: false,
       });
     }
     if (!product) {
       return res.status(404).json({
-        mensaje: 'Usuario no registrado',
+        mensaje: 'Producto no registrado',
         ok: false
       });
     } else {
