@@ -48,7 +48,9 @@ function saveProduct(req, res) {
       code: body.code,
       name: body.name,
       stock: body.stock,
-      description: body.description
+      description: body.description,
+      price: body.price,
+      discountPrice: body.discountPrice
     });
     product.save((err, productSaved) => {
       if (err) {
@@ -111,6 +113,9 @@ function updateProduct(req, res) {
       product.code = body.code;
       product.stock = body.stock;
       product.description = body.description;
+      product.price = body.price;
+      product.discountPrice = body.discountPrice;
+      product.unitDiscount = body.unitDiscount;
       product.save(( err, productUpdated ) =>{
         if (err) {
           return res.status(400).json({

@@ -9,5 +9,5 @@ api.get('/', ProductController.getProducts);
 api.get('/:id', ProductController.getProduct);
 api.post('/', ProductController.saveProduct);
 api.put('/:id', ProductController.updateProduct);
-api.delete('/', ProductController.deleteProduct);
+api.delete('/:id', ProductController.deleteProduct);
 module.exports = api;

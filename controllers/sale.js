@@ -59,7 +59,10 @@ function saveSale(req, res) {
                 code: product.code,
                 name: product.name,
                 stock: products[i].stock,
-                description: product.description
+                description: product.description,
+                price: product.price,
+                discountPrice: product.discountPrice,
+                unitDiscount: product.unitDiscount
               });
               newStock.save(( err, productUpdated ) => {
                 if(err){
@@ -83,8 +86,7 @@ function saveSale(req, res) {
       }
     });
   } else {
-    res.status(400).send({message: 'Ingrese los datos necers' +
-      'sarios'});
+    res.status(400).send({message: 'Ingrese los datos necesarios'});
   }
 }
 
